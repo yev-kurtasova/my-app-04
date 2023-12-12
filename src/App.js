@@ -4,7 +4,10 @@ import './App.css';
 function App() {
 
   const [arr, setArr] = useState([4, 7, 3, 8]);
-
+  const [randomNumber, setrandomNumber] = useState((Math.floor(Math.random()*100) + 1));
+  const changeRandomNumber = () => {
+    setrandomNumber((Math.floor(Math.random()*100) + 1));
+  }
 
   function push() {
     let randomNumber = (Math.floor(Math.random()*1000) + 1);
@@ -19,6 +22,9 @@ function App() {
       <ul>
         {arr.map((item, idx) => <li key={idx}>{item}</li>)}
       </ul>
+      <h1>Task 2</h1>
+      <h3>Random Number: {randomNumber}</h3>
+      <button onClick={changeRandomNumber}>Get Number</button>
     </>
   );
 }
